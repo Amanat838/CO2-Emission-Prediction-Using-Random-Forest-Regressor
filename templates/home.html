@@ -1,0 +1,99 @@
+<html>
+<body>
+    <div class="login">
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>CO2 Emission from vehicles prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Vehicle Class</label>
+            <select class="form-control" name="vehicle_class" placeholder="Enter you Gender" required>
+                <option class="placeholder" selected disabled value="">Select your Vehicle Class</option>
+                <option value="SUV - SMALL">
+                    SUV - SMALL
+                </option>
+                <option value="COMPACT">
+                    COMPACT
+                </option>
+                <option value="SUV - STANDARD">
+                    SUV - STANDARD
+                </option>
+                <option value="SUBCOMPACT">
+                    SUBCOMPACT
+                </option>
+                <option value="PICKUP TRUCK - STANDARD">
+                    PICKUP TRUCK - STANDARD
+                </option>
+                <option value="TWO-SEATER">
+                    TWO-SEATER
+                </option>
+                <option value="MINICOMPACT">
+                    MINICOMPACT
+                </option>
+                <option value="STATION WAGON - SMALL">
+                    STATION WAGON - SMALL
+                </option>
+                <option value="PICKUP TRUCK - SMALL">
+                    PICKUP TRUCK - SMALL
+                </option>
+                <option value="MINIVAN">
+                    MINIVAN
+                </option>
+                <option value="SPECIAL PURPOSE VEHICLE">
+                    SPECIAL PURPOSE VEHICLE
+                </option>
+                <option value="VAN - PASSENGER">
+                    VAN - PASSENGER
+                </option>
+                <option value="STATION WAGON - MID-SIZE">
+                    STATION WAGON - MID-SIZE
+                </option>
+                <option value="VAN - CARGO">
+                    VAN - CARGO
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Fuel Type</label>
+            <select class="form-control" name="fuel_type" placeholder="Select Fuel Type" required>
+                <option class="placeholder" selected disabled value="">Select Fuel Type</option>
+                <option value="X">
+                    X
+                </option>
+                <option value="Z">
+                    Z
+                </option>
+                <option value="E">
+                    E
+                </option>
+                <option value="D">
+                    D
+                </option>
+                <option value="N">
+                    N
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Engine Size(L)</label>
+            <input type="number" class="form-control" name="engine_size">
+
+            <label class="form-label">Cylinders</label>
+            <input type="number" class="form-control" name="cylinders">
+
+            <label class="form-label">Fuel Consumption Comb (L/100 km)</label>
+            <input type="number" class="form-control" name="fuel_cons_100km">
+
+            <label class="form-label">Fuel Consumption Comb (mpg)</label>
+            <input type="number" class="form-control" name="fuel_cons_mpg">
+        </div>
+        
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict CO2 Emission" required />
+        </div>
+    </form>
+    <h2>
+       The prediction is {{results}}
+    </h2>
+   <body>
+</html>
